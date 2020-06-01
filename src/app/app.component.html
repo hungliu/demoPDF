@@ -1,15 +1,21 @@
-<div class="row" style="padding-left:30px;padding-bottom: 5px;">
-  <input *ngFor="let item of list; let i=index" type="button" (click)='openFile(i)' value="File Internal {{i+1}}"
+<app-parent-cpn></app-parent-cpn>
+
+<input type="button" value="Show Button in Parent" (click)='showButton()'>
+<input type="button" value="Hide Button in Parent" (click)='hideButton()'>
+
+<div class="row" style="padding-left:30px;">
+  <p>Open File Internal:</p>
+  <input *ngFor="let item of list; let i=index" type="button" (click)='openFile(i)' value="File Dummy {{i+1}}"
     style="margin-right:5px;" />
 </div>
 
-<div class="row" style="padding-left:30px;padding-bottom: 5px;">
-  <input type="button" (click)='openFileExternal(1)' value="File External 1" style="margin-right:5px;" />
-  <input type="button" (click)='openFileExternal(2)' value="File External 2" style="margin-right:5px;" />
-  <input type="button" (click)='openFileExternal(3)' value="File External 3" style="margin-right:5px;" />
-  <input type="button" (click)='openFileExternal(4)' value="File External 4" style="margin-right:5px;" />
+<div class="row" style="padding-left:30px;">
+  <p>Open File via API:</p>
+  <input type="button" (click)='openFileFromAPI(1)' value="File demo 1" style="margin-right:5px;" />
+  <input type="button" (click)='openFileFromAPI(2)' value="File demo 2" style="margin-right:5px;" />
+  <input type="button" (click)='openFileFromAPI(3)' value="File demo 3" style="margin-right:5px;" />
 </div>
 
-<div style="width: auto; height: 600px;padding: 30px;">
+<div style="width: auto; height: 700px;padding: 30px;">
   <ng2-pdfjs-viewer #pdfViewer></ng2-pdfjs-viewer>
 </div>
